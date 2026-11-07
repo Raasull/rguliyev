@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Rasul Guliyev</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body class="projects-page">
 
@@ -14,9 +15,9 @@
       <span class="brand-role">Student · ADA University</span>
     </a>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="index.html#intro">Home</a>
+      <a href="about.html#about-intro">About</a>
+      <a href="projects.html#projects-intro" aria-current="page">Projects</a>
     </nav>
     <div class="header-links">
       <a class="github-link" href="https://github.com/Raasull/rguliyev" aria-label="GitHub repository">
@@ -27,14 +28,14 @@
   </header>
 
   <main class="page-shell projects-shell">
-    <section id="projects-intro" class="page-heading">
+    <section id="projects-intro" class="page-heading" data-reveal>
       <p class="eyebrow">Selected work · 2026</p>
       <h1>Things I've<br>been <span class="muted-title">working on.</span></h1>
       <p><!-- Introduce your projects in your own words. --></p>
     </section>
 
     <section id="project-list" class="project-list" aria-label="Selected projects">
-      <article class="project-row" id="project-one">
+      <article class="project-row" id="project-one" data-reveal>
         <div class="project-visual visual-one" role="img" aria-label="Placeholder for a Project 1 screenshot">
           <span class="visual-label">PROJECT 01</span>
           <span class="visual-mark">01</span>
@@ -48,7 +49,7 @@
         </div>
       </article>
 
-      <article class="project-row" id="hour-of-code">
+      <article class="project-row" id="hour-of-code" data-reveal>
         <div class="project-visual visual-two" role="img" aria-label="Placeholder for an Hour of Code screenshot">
           <span class="visual-label">HOUR OF CODE</span>
           <span class="visual-mark code-mark">&lt;/&gt;</span>
@@ -62,7 +63,7 @@
         </div>
       </article>
 
-      <article class="project-row" id="robotics">
+      <article class="project-row" id="robotics" data-reveal>
         <div class="project-visual visual-three" role="img" aria-label="Placeholder for a Robotics project photo">
           <span class="visual-label">ROBOTICS</span>
           <span class="visual-mark robot-mark">R</span>

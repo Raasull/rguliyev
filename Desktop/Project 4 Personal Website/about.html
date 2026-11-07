@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Rasul Guliyev</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body class="info-page">
 
@@ -14,9 +15,9 @@
       <span class="brand-role">Student · ADA University</span>
     </a>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html" aria-current="page">About</a>
-      <a href="projects.html">Projects</a>
+      <a href="index.html#intro">Home</a>
+      <a href="about.html#about-intro" aria-current="page">About</a>
+      <a href="projects.html#projects-intro">Projects</a>
     </nav>
     <div class="header-links">
       <a class="github-link" href="https://github.com/Raasull/rguliyev" aria-label="GitHub repository">
@@ -27,7 +28,7 @@
   </header>
 
   <main class="page-shell info-shell">
-    <section id="about-intro" class="page-heading">
+    <section id="about-intro" class="page-heading" data-reveal>
       <p class="eyebrow">A little more about me</p>
       <h1>Info<span class="heading-period">.</span></h1>
       <p class="info-intro"><!-- Introduce yourself in your own words. Share your background, interests, and what you hope to learn. --></p>
@@ -37,28 +38,28 @@
       <div class="info-label">
         <p class="eyebrow">Background</p>
       </div>
-      <article class="info-copy" id="background">
+      <article class="info-copy" id="background" data-reveal>
         <h2>Where it starts</h2>
         <p><!-- Share your education, qualifications, and experiences. --></p>
       </article>
       <div class="info-label">
         <p class="eyebrow">Interests</p>
       </div>
-      <article class="info-copy" id="interests">
+      <article class="info-copy" id="interests" data-reveal>
         <h2>What I'm curious about</h2>
         <p><!-- Describe activities and topics you enjoy, in or outside your courses. --></p>
       </article>
       <div class="info-label">
         <p class="eyebrow">Currently</p>
       </div>
-      <article class="info-copy" id="learning-and-goals">
+      <article class="info-copy" id="learning-and-goals" data-reveal>
         <h2>What I'm learning</h2>
         <p><!-- Share what you're learning and what you'd like to explore next. --></p>
       </article>
       <div class="info-label">
         <p class="eyebrow">Skills</p>
       </div>
-      <article class="info-copy" id="skills">
+      <article class="info-copy" id="skills" data-reveal>
         <h2>Things I work with</h2>
         <ul class="skill-list">
           <li>[Skill]</li>
@@ -66,6 +67,33 @@
           <li>[Skill]</li>
         </ul>
       </article>
+    </section>
+
+    <section class="curiosity-quest" data-quest data-reveal aria-labelledby="quest-title">
+      <div class="quest-heading">
+        <p class="eyebrow">A tiny field quest</p>
+        <h2 id="quest-title">Three curiosities. One little unlock.</h2>
+        <p>Open each field note to explore a few things that make learning through projects interesting.</p>
+      </div>
+      <div class="quest-progress">
+        <p data-quest-status aria-live="polite">0 of 3 field notes discovered.</p>
+        <progress data-quest-progress max="3" value="0" aria-label="Field notes discovered">0 of 3</progress>
+      </div>
+      <div class="quest-list">
+        <details class="quest-item" data-quest-item>
+          <summary><span class="quest-index">01</span><span>Code</span><span class="quest-toggle" aria-hidden="true"></span></summary>
+          <p>Break a big question into small steps, then use code to test an idea and make it real.</p>
+        </details>
+        <details class="quest-item" data-quest-item>
+          <summary><span class="quest-index">02</span><span>Robotics</span><span class="quest-toggle" aria-hidden="true"></span></summary>
+          <p>Connect software with the physical world and learn from what happens when the two meet.</p>
+        </details>
+        <details class="quest-item" data-quest-item>
+          <summary><span class="quest-index">03</span><span>Hands-on projects</span><span class="quest-toggle" aria-hidden="true"></span></summary>
+          <p>Turn curiosity into something you can build, try, improve, and share.</p>
+        </details>
+      </div>
+      <p class="quest-complete" data-quest-complete hidden>Curiosity explorer unlocked. Thanks for exploring.</p>
     </section>
   </main>
 
