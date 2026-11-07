@@ -125,6 +125,20 @@ a:focus-visible {
   color: #aaa;
 }
 
+.header-links .github-link {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.github-link svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
 .page-shell {
   width: min(var(--page-width), calc(100% - 112px));
   margin: 0 auto;
@@ -727,8 +741,8 @@ h2 {
   }
 
   .site-nav a {
-    min-width: 82px;
-    padding: 7px 14px;
+    min-width: 76px;
+    padding: 7px 12px;
   }
 
   .home-shell {
