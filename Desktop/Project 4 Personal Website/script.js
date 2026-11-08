@@ -1,6 +1,67 @@
 const revealTargets = document.querySelectorAll("[data-reveal]");
 const siteHeader = document.querySelector(".site-header");
 
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".site-nav").forEach((nav) => {
+    const pill = nav.querySelector(".nav-pill");
+    const links = nav.querySelectorAll(".nav-link");
+    const activeLink = nav.querySelector(".nav-link.active");
+    let hoveredLink = null;
+
+    if (!pill || !activeLink) {
+      return;
+    }
+
+    function movePill(target) {
+      if (!target) return;
+      pill.style.width = `${target.offsetWidth}px`;
+      pill.style.transform = `translateX(${target.offsetLeft}px)`;
+    }
+
+    pill.style.transition = "none";
+    movePill(activeLink);
+    pill.getBoundingClientRect();
+    pill.style.removeProperty("transition");
+    nav.classList.add("is-ready");
+
+    const updatePill = () => movePill(hoveredLink || activeLink);
+
+    links.forEach((link) => {
+      link.addEventListener("pointerenter", () => {
+        hoveredLink = link;
+        movePill(link);
+      });
+      link.addEventListener("click", () => {
+        hoveredLink = link;
+        movePill(link);
+      });
+    });
+
+    nav.addEventListener("pointerleave", () => {
+      hoveredLink = nav.contains(document.activeElement) && document.activeElement instanceof HTMLAnchorElement
+        ? document.activeElement
+        : null;
+      updatePill();
+    });
+
+    nav.addEventListener("focusin", (event) => {
+      if (event.target instanceof HTMLAnchorElement) {
+        hoveredLink = event.target;
+        movePill(event.target);
+      }
+    });
+
+    nav.addEventListener("focusout", (event) => {
+      if (!nav.contains(event.relatedTarget)) {
+        hoveredLink = null;
+        updatePill();
+      }
+    });
+
+    window.addEventListener("resize", updatePill);
+  });
+});
+
 if (siteHeader) {
   const updateHeader = () => {
     siteHeader.classList.toggle("is-scrolled", window.scrollY > 8);
